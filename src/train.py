@@ -26,7 +26,8 @@ dataloader = DataLoader(
     batch_size=batch_size,
     shuffle=True
 )
-
+print("Dataset size:", len(dataset))
+print("Batches:", len(dataloader))
 
 # Model
 model = GPT(
