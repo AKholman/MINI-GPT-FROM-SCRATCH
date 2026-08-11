@@ -59,7 +59,7 @@ optimizer = torch.optim.AdamW(
     lr=learning_rate
 )
 
-
+'''
 # Training loop
 for epoch in range(epochs):
 
@@ -98,3 +98,52 @@ for epoch in range(epochs):
                 f"step={step} "
                 f"loss={loss.item():.4f}"
             )
+'''
+
+max_steps = 20
+
+# Training loop
+for epoch in range(epochs):
+
+    for step, (x, y) in enumerate(dataloader):
+
+        if step >= max_steps:
+            break
+
+        x = x.to(device)
+        y = y.to(device)
+
+        # Forward
+        logits = model(x)
+
+        if step == 0:
+            print("Logits shape:", logits.shape)
+
+        # Loss
+        loss = criterion(
+            logits.view(-1, 8000),
+            y.view(-1)
+        )
+
+        # Backpropagation
+        optimizer.zero_grad()
+
+        loss.backward()
+
+        optimizer.step()
+
+        # Checkpoint
+        if step % 1000 == 0:
+            torch.save({
+                "step": step,
+                "model_state_dict": model.state_dict(),
+                "optimizer_state_dict": optimizer.state_dict(),
+                "loss": loss.item()
+            }, f"checkpoint_{step}.pt")
+
+        # Print loss
+        print(
+            f"epoch={epoch} "
+            f"step={step} "
+            f"loss={loss.item():.4f}"
+        )
