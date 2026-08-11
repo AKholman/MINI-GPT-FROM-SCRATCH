@@ -5,6 +5,8 @@ from torch.utils.data import DataLoader
 from dataset import TinyStoriesDataset
 from model import GPT
 
+import model
+print("MODEL FILE:", model.__file__)
 
 # Configuration
 batch_size = 8
@@ -44,10 +46,6 @@ print(
     "Parameters:",
     sum(p.numel() for p in model.parameters())
 )
-
-print("Model file:", model.__class__.__module__)
-print("Parameters:", sum(p.numel() for p in model.parameters()))
-
 
 # Loss + optimizer
 criterion = nn.CrossEntropyLoss()
