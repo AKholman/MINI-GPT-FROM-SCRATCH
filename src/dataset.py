@@ -12,8 +12,8 @@ class TinyStoriesDataset(Dataset):
 
         # Load dataset
         dataset = load_dataset(
-            "roneneldan/TinyStories",
-            split="train[:10]"
+           "roneneldan/TinyStories",
+            split=split
         )
 
         # Load our tokenizer
