@@ -72,6 +72,20 @@ for epoch in range(epochs):
 
         optimizer.step()
 
+        optimizer.zero_grad()
+
+        loss.backward()
+
+        optimizer.step()
+
+        if step % 1000 == 0:
+            torch.save({
+                "step": step,
+                "model_state_dict": model.state_dict(),
+                "optimizer_state_dict": optimizer.state_dict(),
+                "loss": loss.item()
+            }, f"checkpoint_{step}.pt")
+
         if step % 100 == 0:
             print(
                 f"epoch={epoch} "

@@ -6,4 +6,5 @@
 ├── tokenizer/
 │   └── tinystories.json
 ├── requirements.txt
-└── README.md
+├── README.md
+└── .gitignore
