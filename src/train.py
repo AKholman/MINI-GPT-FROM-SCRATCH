@@ -5,6 +5,10 @@ from torch.utils.data import DataLoader
 from dataset import TinyStoriesDataset
 from model import GPT
 
+import os
+
+os.makedirs("/content/drive/MyDrive/mini-gpt/checkpoints", exist_ok=True)
+
 import model
 
 # Configuration
@@ -65,7 +69,6 @@ for epoch in range(epochs):
         y = y.to(device)
 
         # Forward
-        print(f"starting step {step}", flush=True)
         logits = model(x)
 
         # Loss
