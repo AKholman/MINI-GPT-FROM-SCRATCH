@@ -34,10 +34,10 @@ print("Batches:", len(dataloader))
 # Model
 model = GPT(
     vocab_size=8000,
-    d_model=384,
+    d_model=512,
     context_length=256,
     n_layers=6,
-    n_heads=6
+    n_heads=8
 ).to(device)
 
 print(
