@@ -57,6 +57,7 @@ for epoch in range(epochs):
         y = y.to(device)
 
         # Forward
+        print(f"starting step {step}", flush=True)
         logits = model(x)
 
         # Loss
