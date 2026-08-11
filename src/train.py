@@ -33,7 +33,7 @@ dataloader = DataLoader(
 print("Dataset size:", len(dataset))
 print("Batches:", len(dataloader))
 
-'''
+
 # Model
 model = GPT(
     vocab_size=8000,
@@ -42,15 +42,7 @@ model = GPT(
     n_layers=6,
     n_heads=8
 ).to(device)
-'''
 
-model = GPT(
-    vocab_size=8000,
-    d_model=256,
-    context_length=256,
-    n_layers=6,
-    n_heads=8
-).to(device)
 
 print(
     "Parameters:",
