@@ -34,12 +34,16 @@ print("Batches:", len(dataloader))
 # Model
 model = GPT(
     vocab_size=8000,
-    d_model=384,
+    d_model=256,
     context_length=256,
     n_layers=6,
-    n_heads=6
+    n_heads=8
 ).to(device)
 
+print(
+    "Parameters:",
+    sum(p.numel() for p in model.parameters())
+)
 
 
 # Loss + optimizer
