@@ -56,9 +56,25 @@ optimizer = torch.optim.AdamW(
 )
 
 # Training loop
+checkpoint = torch.load(
+    "/kaggle/working/checkpoint_62000.pt",
+    map_location=device
+)
+
+model.load_state_dict(checkpoint["model_state_dict"])
+optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+
+start_step = checkpoint["step"] + 1
+
+print("Resuming from step:", start_step)
+
+
+
 for epoch in range(epochs):
 
     for step, (x, y) in enumerate(dataloader):
+        if step < start_step:
+            continue
 
         x = x.to(device)
         y = y.to(device)
@@ -79,13 +95,14 @@ for epoch in range(epochs):
 
         optimizer.step()
 
-        if step % 1000 == 0:
+        if step % 5000 == 0:
             torch.save({
                 "step": step,
                 "model_state_dict": model.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
                 "loss": loss.item()
-            }, f"/kaggle/working/checkpoint_{step}.pt")
+            }, "/kaggle/working/checkpoint_latest.pt")
+
 
         if step % 100 == 0:
             print(
