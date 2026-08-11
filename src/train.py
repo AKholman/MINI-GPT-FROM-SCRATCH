@@ -5,11 +5,6 @@ from torch.utils.data import DataLoader
 from dataset import TinyStoriesDataset
 from model import GPT
 
-import os
-
-os.makedirs("/content/drive/MyDrive/mini-gpt/checkpoints", exist_ok=True)
-
-import model
 
 # Configuration
 batch_size = 8
@@ -90,7 +85,7 @@ for epoch in range(epochs):
                 "model_state_dict": model.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
                 "loss": loss.item()
-            }, f"/content/drive/MyDrive/mini-gpt/checkpoints/checkpoint_{step}.pt")
+            }, f"/kaggle/working/checkpoint_{step}.pt")
 
         if step % 100 == 0:
             print(
