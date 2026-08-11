@@ -45,6 +45,9 @@ print(
     sum(p.numel() for p in model.parameters())
 )
 
+print("Model file:", model.__class__.__module__)
+print("Parameters:", sum(p.numel() for p in model.parameters()))
+
 
 # Loss + optimizer
 criterion = nn.CrossEntropyLoss()
