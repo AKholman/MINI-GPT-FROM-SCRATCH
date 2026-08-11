@@ -90,7 +90,7 @@ for epoch in range(epochs):
                 "model_state_dict": model.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
                 "loss": loss.item()
-            }, f"checkpoint_{step}.pt")
+            }, f"/content/drive/MyDrive/mini-gpt/checkpoints/checkpoint_{step}.pt")
 
         if step % 100 == 0:
             print(
