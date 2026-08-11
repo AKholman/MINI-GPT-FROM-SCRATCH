@@ -6,7 +6,6 @@ from dataset import TinyStoriesDataset
 from model import GPT
 
 import model
-print("MODEL FILE:", model.__file__)
 
 # Configuration
 batch_size = 8
