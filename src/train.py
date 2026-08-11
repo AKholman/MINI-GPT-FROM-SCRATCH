@@ -72,12 +72,6 @@ for epoch in range(epochs):
 
         optimizer.step()
 
-        optimizer.zero_grad()
-
-        loss.backward()
-
-        optimizer.step()
-
         if step % 1000 == 0:
             torch.save({
                 "step": step,
