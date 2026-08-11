@@ -14,7 +14,7 @@ epochs = 1
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-
+'''
 # Dataset
 dataset = TinyStoriesDataset(
     split="train",
@@ -24,6 +24,18 @@ dataset = TinyStoriesDataset(
 dataloader = DataLoader(
     dataset,
     batch_size=batch_size,
+    shuffle=True
+)
+'''
+
+dataset = TinyStoriesDataset(
+    split="train",
+    context_length=256
+)
+
+dataloader = DataLoader(
+    torch.utils.data.Subset(dataset, range(1000)),
+    batch_size=4,
     shuffle=True
 )
 
