@@ -14,6 +14,8 @@ epochs = 1
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
+print("Device:", device)
+print("GPU:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else "NO GPU")
 
 # Dataset
 dataset = TinyStoriesDataset(
