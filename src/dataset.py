@@ -10,43 +10,73 @@ class TinyStoriesDataset(Dataset):
 
         self.context_length = context_length
 
-        # Load dataset
         dataset = load_dataset(
-           "roneneldan/TinyStories",
+            "roneneldan/TinyStories",
             split=split
         )
 
-        # Load our tokenizer
         self.tokenizer = Tokenizer.from_file(
             "tokenizer/tinystories.json"
         )
 
-        # Tokenize all stories
         self.tokens = []
 
-        for example in dataset:
-            ids = self.tokenizer.encode(
-                example["text"]
-            ).ids
+        if split == "train":
 
-            self.tokens.extend(ids)
+            # Continuous token stream for training
+            for example in dataset:
+                ids = self.tokenizer.encode(
+                    example["text"]
+                ).ids
 
-        self.tokens = torch.tensor(
-            self.tokens,
-            dtype=torch.long
-        )
+                self.tokens.extend(ids)
+
+            self.tokens = torch.tensor(
+                self.tokens,
+                dtype=torch.long
+            )
+
+        else:
+
+            # One sequence per validation story
+            for example in dataset:
+
+                ids = self.tokenizer.encode(
+                    example["text"]
+                ).ids
+
+                if len(ids) > context_length:
+                    self.tokens.append(
+                        torch.tensor(
+                            ids[:context_length + 1],
+                            dtype=torch.long
+                        )
+                    )
 
     def __len__(self):
-        return len(self.tokens) - self.context_length
+
+        if isinstance(self.tokens, torch.Tensor):
+            return len(self.tokens) - self.context_length
+
+        return len(self.tokens)
 
     def __getitem__(self, idx):
 
-        x = self.tokens[
-            idx : idx + self.context_length
-        ]
+        if isinstance(self.tokens, torch.Tensor):
 
-        y = self.tokens[
-            idx + 1 : idx + self.context_length + 1
-        ]
+            x = self.tokens[
+                idx:idx + self.context_length
+            ]
+
+            y = self.tokens[
+                idx + 1:idx + self.context_length + 1
+            ]
+
+        else:
+
+            sequence = self.tokens[idx]
+
+            x = sequence[:-1]
+            y = sequence[1:]
 
         return x, y
