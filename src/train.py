@@ -56,6 +56,7 @@ optimizer = torch.optim.AdamW(
 )
 
 # Training loop
+'''
 checkpoint = torch.load(
     "/kaggle/working/checkpoint_62000.pt",
     map_location=device
@@ -67,7 +68,7 @@ optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
 start_step = checkpoint["step"] + 1
 
 print("Resuming from step:", start_step)
-
+'''
 
 
 for epoch in range(epochs):
