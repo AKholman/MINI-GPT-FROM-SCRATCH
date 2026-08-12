@@ -59,6 +59,10 @@ model.eval()
 total_loss = 0.0
 total_batches = 0
 
+print("Starting evaluation...")
+print("Total validation batches:", len(dataloader))
+
+'''
 with torch.no_grad():
 
     for x, y in dataloader:
@@ -76,9 +80,45 @@ with torch.no_grad():
         total_loss += loss.item()
         total_batches += 1
 
+        # Progress
+        if total_batches % 100 == 0:
+            print(
+                f"Evaluated batches: {total_batches}/{len(dataloader)}"
+            )
+
 
 validation_loss = total_loss / total_batches
 perplexity = math.exp(validation_loss)
 
+print()
 print(f"Validation Loss: {validation_loss:.4f}")
 print(f"Perplexity:      {perplexity:.4f}")
+
+'''
+
+with torch.no_grad():
+
+    for step, (x, y) in enumerate(dataloader):
+
+        x = x.to(device)
+        y = y.to(device)
+
+        logits = model(x)
+
+        loss = criterion(
+            logits.view(-1, vocab_size),
+            y.view(-1)
+        )
+
+        total_loss += loss.item()
+        total_batches += 1
+
+        if step % 100 == 0:
+            print(
+                f"Evaluation step={step} "
+                f"loss={loss.item():.4f}"
+            )
+
+        # TEST ONLY
+        if step >= 500:
+            break
