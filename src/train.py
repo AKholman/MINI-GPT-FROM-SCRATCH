@@ -74,8 +74,8 @@ print("Resuming from step:", start_step)
 for epoch in range(epochs):
 
     for step, (x, y) in enumerate(dataloader):
-        if step < start_step:
-            continue
+        # if step < start_step:
+        #    continue
 
         x = x.to(device)
         y = y.to(device)
