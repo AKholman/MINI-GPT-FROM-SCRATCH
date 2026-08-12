@@ -8,3 +8,7 @@
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+
+
+Step: 125000
+Loss: 1.713707447052002
