@@ -101,7 +101,7 @@ for epoch in range(epochs):
                 "model_state_dict": model.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
                 "loss": loss.item()
-            }, "/kaggle/working/checkpoint_latest.pt")
+            }, "/kaggle/working/checkpoint_latest_4layer.pt")
 
 
         if step % 100 == 0:
