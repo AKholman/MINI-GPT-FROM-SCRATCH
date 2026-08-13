@@ -48,3 +48,8 @@ Base evaluation:
 | Evaluation mode | `torch.no_grad()` |
 | Hardware | NVIDIA GPU (Kaggle) |
 
+# 4-layer 
+
+Step: 60000
+Loss: 1.7748910188674927
+
