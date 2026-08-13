@@ -63,3 +63,14 @@ Parameters: 33551168
 
 Step: 60000
 Loss: 1.63507878780365
+
+# 4heads
+
+Exp 4
+Layers: 6
+Heads: 4
+Context: 256
+Parameters: 27,246,400
+Steps: 60,000
+Training loss: 1.7002723217010498
+Checkpoint: checkpoint_latest_4head.pt
