@@ -16,6 +16,7 @@ train: Dataset({features: ['text'], num_rows: 2119719})
 validation: Dataset({features: ['text'],num_rows: 21990})
 
 
+# 6-layer 
 Step: 125000
 Loss: 1.713707447052002
 
@@ -53,3 +54,12 @@ Base evaluation:
 Step: 60000
 Loss: 1.7748910188674927
 
+
+# 8 layer
+
+Dataset size: 448932815
+Batches: 56116602
+Parameters: 33551168
+
+Step: 60000
+Loss: 1.63507878780365

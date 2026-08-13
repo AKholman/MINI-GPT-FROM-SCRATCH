@@ -37,8 +37,8 @@ model = GPT(
     vocab_size=8000,
     d_model=512,
     context_length=256,
-    n_layers=8,
-    n_heads=8
+    n_layers=6,
+    n_heads=4
 ).to(device)
 
 
@@ -102,7 +102,7 @@ for epoch in range(epochs):
                 "model_state_dict": model.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
                 "loss": loss.item()
-            }, "/kaggle/working/checkpoint_latest_8layer.pt")
+            }, "/kaggle/working/checkpoint_latest_4head.pt")
 
 
         if step % 100 == 0:
