@@ -36,7 +36,7 @@ print("Batches:", len(dataloader))
 model = GPT(
     vocab_size=8000,
     d_model=512,
-    context_length=128,
+    context_length=512,
     n_layers=6,
     n_heads=8
 ).to(device)
@@ -102,7 +102,7 @@ for epoch in range(epochs):
                 "model_state_dict": model.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
                 "loss": loss.item()
-            }, "/kaggle/working/checkpoint_latest_context128.pt")
+            }, "/kaggle/working/checkpoint_latest_context512.pt")
 
 
         if step % 100 == 0:
