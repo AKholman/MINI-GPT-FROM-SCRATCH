@@ -1,0 +1,57 @@
+
+========================================
+Sample 1
+========================================
+prompt = "Once upon a time":
+
+Generated text: 
+Once upon a time , there was a little girl named Lily . She loved to play with her toys and her favorite 
+toy was a teddy bear .One day , Lily ' s mom asked her to help her with the laundry . Lily was excited 
+to help her mom , so she helped her mom put all the clothes in the washing machine . After they finished, 
+Lily ' s mom asked her to help her put the clothes in the washing machine . Lily was happy to help and put 
+the clothes in the washing machine . Later that
+
+========================================
+Sample 2
+========================================
+prompt = "A little boy went to the park":
+
+Generated text:
+A little boy went to the park with his mom . He saw a big tree with lots of leaves . He wanted to climb it .
+His mom said , " Be careful , don ' t go too high ." The little boy was very careful . He climbed the tree 
+and found a big rock . He climbed up and saw a bird . The bird said , " Hello , I am Ben . Do you want to 
+play with me ?" The little boy said , " Yes , please . I am very fast ." Ben and the bird played together
+
+========================================
+Sample 3
+========================================
+prompt = "Lily found a strange box":
+
+Generated text:
+Lily found a strange box in the attic . She opened it and found a big , hairy spider inside . Lily was scared 
+and didn ' t knowwhat to do . She asked her mom , " What is in the box ?" Her mom said , " It ' s a spider ,
+Lily . It ' s very hairy and can ' t hurt you ." Lily was still scared , but she still wanted to play with 
+the spider . She said , " Okay , I won ' t touch it . But I ' ll be careful ."
+
+========================================
+Sample 4
+========================================
+prompt = "One sunny morning, a dog":
+
+Generated text:
+One sunny morning , a dog named Max went for a walk . He saw a big tree with a lot of leaves . Max wanted 
+to play under the tree . He jumped and jumped , but he could not reach the leaves . Max was sad . A little 
+girl named Lily saw Max and said , " Don 't worry , Max . I will help you ." Lily climbed the tree and picked 
+up a leaf . She put the leaf on the tree and said , " Now you can reach the leaves !" Max was happy and said,
+
+========================================
+Sample 5
+========================================
+prompt = "Tom wanted to learn how to"
+
+Generated text:
+Tom wanted to learn how to swim . He asked his mom if he could go to the pool . His mom said yes , but he had 
+to be careful . She said he had to stay in the pool and not get too wet . Tom was very excited . He put on 
+his swimsuit and ran to the pool . He jumped in and splashed around . He felt the water splash on his face 
+and the water splash on his face . He laughed and had fun .But then he saw something else . He saw a big 
+fish in the

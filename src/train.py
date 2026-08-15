@@ -8,7 +8,7 @@ from model import GPT
 
 # Configuration
 batch_size = 8
-context_length = 256
+context_length = 512
 learning_rate = 3e-4
 epochs = 1
 
@@ -54,21 +54,6 @@ optimizer = torch.optim.AdamW(
     model.parameters(),
     lr=learning_rate
 )
-
-# Training loop
-'''
-checkpoint = torch.load(
-    "/kaggle/working/checkpoint_62000.pt",
-    map_location=device
-)
-
-model.load_state_dict(checkpoint["model_state_dict"])
-optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
-
-start_step = checkpoint["step"] + 1
-
-print("Resuming from step:", start_step)
-'''
 
 
 for epoch in range(epochs):
