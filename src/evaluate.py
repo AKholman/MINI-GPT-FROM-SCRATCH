@@ -42,7 +42,7 @@ model = GPT(
 
 # Load checkpoint
 checkpoint = torch.load(
-    "/kaggle/working/checkpoint_latest.pt",
+    "/kaggle/working/checkpoint_latest_4layer.pt",
     map_location=device
 )
 
