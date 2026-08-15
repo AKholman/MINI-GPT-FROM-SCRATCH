@@ -35,7 +35,7 @@ model = GPT(
     vocab_size=vocab_size,
     d_model=512,
     context_length=context_length,
-    n_layers=8,
+    n_layers=6,
     n_heads=4
 ).to(device)
 
