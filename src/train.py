@@ -8,7 +8,7 @@ from model import GPT
 
 # Configuration
 batch_size = 8
-context_length = 512
+context_length = 256
 learning_rate = 3e-4
 epochs = 1
 
@@ -36,7 +36,7 @@ print("Batches:", len(dataloader))
 model = GPT(
     vocab_size=8000,
     d_model=512,
-    context_length=512,
+    context_length=256,
     n_layers=6,
     n_heads=8
 ).to(device)
@@ -55,6 +55,7 @@ optimizer = torch.optim.AdamW(
     lr=learning_rate
 )
 
+loss_history = []
 
 for epoch in range(epochs):
 
@@ -81,14 +82,7 @@ for epoch in range(epochs):
 
         optimizer.step()
 
-        if step % 5000 == 0:
-            torch.save({
-                "step": step,
-                "model_state_dict": model.state_dict(),
-                "optimizer_state_dict": optimizer.state_dict(),
-                "loss": loss.item()
-            }, "/kaggle/working/checkpoint_latest_context512.pt")
-
+        '''
 
         if step % 100 == 0:
             print(
@@ -96,4 +90,29 @@ for epoch in range(epochs):
                 f"step={step} "
                 f"loss={loss.item():.4f}"
             )
+        '''
+
+        if step % 5000 == 0:
+            loss_history.append({
+                "step": step,
+                "loss": loss.item()
+            })
+
+            print(
+                f"epoch={epoch} "
+                f"step={step} "
+                f"loss={loss.item():.4f}"
+            )
+
+
+import pandas as pd
+
+df = pd.DataFrame(loss_history)
+
+df.to_csv(
+    "/kaggle/working/training_loss.csv",
+    index=False
+)
+
+print(df)
 

@@ -16,17 +16,16 @@
 ✅ Exp 2 — 4 layers
 ✅ Exp 3 — 8 layers
 ✅ Exp 4 — 6 layers, 4 heads
-🔄 Exp 6 — 6 layers, 8 heads, context 512
+✅ Exp 5 — 6 layers, 8 heads, context 512
 
 
-| Experiment | Layers | Heads | Context | Status  | Validation Loss | Perplexity | Training steps |
+| Experiment | Layers | Heads | Context | d-model  | Validation Loss | Perplexity | Training steps |
 | ---------- | -----: | ----: | ------: | ------- | --------------- | ---------- | -------------- |
-| Baseline   |      6 |     8 |     256 | ✅      |     1.3663      |   3.9210    |  125,000      |
-| Exp 2      |      4 |     8 |     256 | ✅      |     1.5682      |   4.7978    |   60,000      |   
-| Exp 3      |      8 |     8 |     256 | ✅      |     1.4600      |   4.3059    |   60,000      |  
-| Exp 4      |      6 |     4 |     256 | ✅      |     1.5132      |   4.5411    |   60,000      |  
-| Exp 5      |      6 |     8 |     128 | ❌ Skip |     ------      |   ------    |   ------      |  
-| Exp 6      |      6 |     8 |     512 | ✅      |     2.7390      |   15.4721   |   60,000      |  
+| Baseline   |      6 |     8 |     256 |   512   |     1.3663      |   3.9210    |  125,000      |
+| Exp 2      |      4 |     8 |     256 |   512   |     1.5682      |   4.7978    |   60,000      |   
+| Exp 3      |      8 |     8 |     256 |   512   |     1.4600      |   4.3059    |   60,000      |  
+| Exp 4      |      6 |     4 |     256 |   512   |     1.5132      |   4.5411    |   60,000      |  
+| Exp 5      |      6 |     8 |     512 |   512   |     2.7390      |   15.4721   |   60,000      |  
 
 
 
@@ -120,7 +119,7 @@ Perplexity: 4.5411
 
 # context=512
 
-Exp 6
+Exp 5
 Layers: 6
 Heads: 8
 Context: 512
