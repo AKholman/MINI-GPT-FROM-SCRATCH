@@ -36,7 +36,8 @@ train: Dataset({features: ['text'], num_rows: 2119719})
 validation: Dataset({features: ['text'],num_rows: 21990})
 
 
-# 6-layer Baseline
+# 6-layer Baseline 
+training:
 Step: 125000
 Loss: 1.713707447052002
 
@@ -45,7 +46,6 @@ Base evaluation:
 ## Model Evaluation
 
 | Parameter | Value |
-|---|---:|
 | Model architecture | GPT-style Transformer |
 | Parameters | ~27M |
 | Training dataset | TinyStories |
