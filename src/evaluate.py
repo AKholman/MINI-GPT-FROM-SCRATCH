@@ -35,14 +35,14 @@ model = GPT(
     vocab_size=vocab_size,
     d_model=512,
     context_length=context_length,
-    n_layers=4,
+    n_layers=8,
     n_heads=8
 ).to(device)
 
 
 # Load checkpoint
 checkpoint = torch.load(
-    "/kaggle/working/checkpoint_latest_4layer.pt",
+    "/kaggle/working/checkpoint_latest_8layer.pt",
     map_location=device
 )
 

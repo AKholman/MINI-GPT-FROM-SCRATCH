@@ -36,7 +36,7 @@ train: Dataset({features: ['text'], num_rows: 2119719})
 validation: Dataset({features: ['text'],num_rows: 21990})
 
 
-# 6-layer 
+# 6-layer Baseline
 Step: 125000
 Loss: 1.713707447052002
 
@@ -69,10 +69,19 @@ Base evaluation:
 | Evaluation mode | `torch.no_grad()` |
 | Hardware | NVIDIA GPU (Kaggle) |
 
-# 4-layer 
-
+# 4-layer Exp 2
+training:
 Step: 60000
 Loss: 1.7748910188674927
+
+Evaluation:
+d_model=512
+Layers: 4
+Heads: 8
+Context Length: 256
+
+Validation Loss: 1.5682
+Perplexity: 4.7978
 
 
 # 8 layer
@@ -94,3 +103,6 @@ Parameters: 27,246,400
 Steps: 60,000
 Training loss: 1.7002723217010498
 Checkpoint: checkpoint_latest_4head.pt
+
+
+# 8heads
