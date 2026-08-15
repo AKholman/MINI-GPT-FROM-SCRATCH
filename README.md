@@ -12,6 +12,26 @@
 └── .gitignore
 
 
+✅ Baseline — 6 layers, 8 heads, context 256
+✅ Exp 2 — 4 layers
+✅ Exp 3 — 8 layers
+✅ Exp 4 — 6 layers, 4 heads
+🔄 Exp 6 — 6 layers, 8 heads, context 512
+
+
+| Experiment | Layers | Heads | Context | Status |
+| ---------- | -----: | ----: | ------: | ------ |
+| Baseline   |      6 |     8 |     256 | ✅      |
+| Exp 2      |      4 |     8 |     256 | ✅      |
+| Exp 3      |      8 |     8 |     256 | ✅      |
+| Exp 4      |      6 |     4 |     256 | ✅      |
+| Exp 5      |      6 |     8 |     128 | ❌ Skip |
+| Exp 6      |      6 |     8 |     512 | 🔄     |
+
+
+
+
+
 train: Dataset({features: ['text'], num_rows: 2119719})
 validation: Dataset({features: ['text'],num_rows: 21990})
 
