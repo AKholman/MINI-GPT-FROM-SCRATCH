@@ -36,13 +36,13 @@ model = GPT(
     d_model=512,
     context_length=context_length,
     n_layers=8,
-    n_heads=8
+    n_heads=4
 ).to(device)
 
 
 # Load checkpoint
 checkpoint = torch.load(
-    "/kaggle/working/checkpoint_latest_8layer.pt",
+    "/kaggle/working/checkpoint_latest_4head.pt",
     map_location=device
 )
 

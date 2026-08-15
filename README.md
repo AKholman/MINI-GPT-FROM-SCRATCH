@@ -84,7 +84,7 @@ Validation Loss: 1.5682
 Perplexity: 4.7978
 
 
-# 8 layer
+# 8 layer Exp3
 
 Dataset size: 448932815
 Batches: 56116602
@@ -92,6 +92,14 @@ Parameters: 33551168
 
 Step: 60000
 Loss: 1.63507878780365
+
+Evaluation: 
+Layers: 8
+Heads: 8
+Context Length: 256
+
+Validation Loss: 1.4600
+Perplexity: 4.3059
 
 # 4heads
 
@@ -103,6 +111,9 @@ Parameters: 27,246,400
 Steps: 60,000
 Training loss: 1.7002723217010498
 Checkpoint: checkpoint_latest_4head.pt
+
+
+
 
 
 # 8heads
