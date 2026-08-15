@@ -112,8 +112,17 @@ Steps: 60,000
 Training loss: 1.7002723217010498
 Checkpoint: checkpoint_latest_4head.pt
 
+Evaluation:
+Experiment: Exp 4
+Layers: 6
+Heads: 4
+Context Length: 256
+
+Validation Loss: 1.5132
+Perplexity: 4.5411
 
 
 
 
 # 8heads
+

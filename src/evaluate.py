@@ -9,7 +9,7 @@ from model import GPT
 
 # Configuration
 batch_size = 8
-context_length = 256
+context_length = 512
 vocab_size = 8000
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -36,13 +36,13 @@ model = GPT(
     d_model=512,
     context_length=context_length,
     n_layers=6,
-    n_heads=4
+    n_heads=8
 ).to(device)
 
 
 # Load checkpoint
 checkpoint = torch.load(
-    "/kaggle/working/checkpoint_latest_4head.pt",
+    "/kaggle/working/checkpoint_latest_context512.pt",
     map_location=device
 )
 
