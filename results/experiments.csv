@@ -1,0 +1,6 @@
+Experiment,Layers,Heads,Context,d-model,Validation Loss,Perplexity,Training steps
+Baseline,6,8,256,512,1.3663,3.921,125000
+Exp 2,4,8,256,512,1.5682,4.7978,60000
+Exp 3,8,8,256,512,1.46,4.3059,60000
+Exp 4,6,4,256,512,1.5132,4.5411,60000
+Exp 5,6,8,512,512,2.739,15.4721,60000

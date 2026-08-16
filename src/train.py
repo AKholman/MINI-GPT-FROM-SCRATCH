@@ -82,7 +82,6 @@ for epoch in range(epochs):
 
         optimizer.step()
 
-        '''
 
         if step % 100 == 0:
             print(
@@ -90,29 +89,5 @@ for epoch in range(epochs):
                 f"step={step} "
                 f"loss={loss.item():.4f}"
             )
-        '''
-
-        if step % 5000 == 0:
-            loss_history.append({
-                "step": step,
-                "loss": loss.item()
-            })
-
-            print(
-                f"epoch={epoch} "
-                f"step={step} "
-                f"loss={loss.item():.4f}"
-            )
-
-
-import pandas as pd
-
-df = pd.DataFrame(loss_history)
-
-df.to_csv(
-    "/kaggle/working/training_loss.csv",
-    index=False
-)
-
-print(df)
+ 
 
